@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.hidden {
+    display: none !important;
+}
+.container {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.floor-names {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+.floor-name {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+.elevator-container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-rows: repeat(10, 50px);
+    grid-gap: 5px;
+    margin-right: 10px;
+    position: relative;
+}
+.grid div {
+    border: 1px solid #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+}
+.time {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+    color: #666;
+}
+.elevator {
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/elevator.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 4px;
+    position: relative;
+    transition: transform linear;
+}
+.elevator.waiting {
+    background-image: url('../images/elevator-red.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.elevator.arrived {
+    background-image: url('../images/elevator-green.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.button {
+    padding: 10px;
+    background-color: #66cc66;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.button.waiting {
+    background-color: #ff4d4d;
+}
+.button.arrived {
+    background-color: #ffffff;
+    color: #66ff66;
+    border: 1px solid #66ff66;;
+}
+audio#arrival-sound {
+    display: none;
+}
