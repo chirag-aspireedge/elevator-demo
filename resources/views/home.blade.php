@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-    
+        <!-- Floor names -->
         <div class="floor-names">
             <div class="floor-name">9th</div>
             <div class="floor-name">8th</div>
@@ -23,6 +23,7 @@
         </div>
 
         <div class="elevator-container">
+            <!-- Multiple Elevators -->
             <div class="grid" data-elevator="1">
                 <div><div class="time hidden">0s</div></div>
                 <div><div class="time hidden">0s</div></div>
@@ -85,6 +86,7 @@
             </div>
         </div>
 
+        <!-- Floor Wise Buttons -->
         <div class="buttons">
             <button class="button" data-floor="9">Call</button>
             <button class="button" data-floor="8">Call</button>
@@ -99,6 +101,7 @@
         </div>
     </div>
 
+    <!-- Elevator Arrived Sounds -->
     <audio id="arrival-sound-1" preload="auto" controls style="display:none;">
         <source src="{{ asset('elevator-sound-1.mp3') }}" type="audio/mpeg">
     </audio>
@@ -116,6 +119,8 @@
     </audio>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Logic for elevator -->
     <script src="{{ asset('js/elevator.js') }}"></script>
 </body>
 </html>

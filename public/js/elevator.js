@@ -13,6 +13,7 @@ $(document).ready(function() {
 
         button.addClass('waiting').text('Waiting');
 
+        // Use closestElevator which find the function findClosestElevator
         const closestElevator = findClosestElevator(floor);
 
         if (closestElevator) {
@@ -20,6 +21,7 @@ $(document).ready(function() {
         }
     });
 
+    // For find the closest available elevator logic
     function findClosestElevator(targetFloor) {
         let closestElevator = null;
         let minDistance = Infinity;
@@ -37,6 +39,7 @@ $(document).ready(function() {
         return closestElevator;
     }
 
+    // For find the closest available elevator and move elevator accordingly
     function moveElevator(elevator, targetFloor, button) {
         elevator.moving = true;
         const elevatorElement = $(`.grid[data-elevator="${elevator.id}"] .elevator`);
@@ -65,6 +68,7 @@ $(document).ready(function() {
             elevatorElement.removeClass('waiting').addClass('arrived');
             button.removeClass('waiting').addClass('arrived').text('Arrived');
 
+            // Play the sound when lift is arrived
             playElevatorSound(elevator.soundId);
 
             setTimeout(function() {
@@ -76,6 +80,7 @@ $(document).ready(function() {
         }, duration);
     }
 
+    // I will play the sound elevator id wise
     function playElevatorSound(soundId) {
         var audio = document.querySelector(`#${soundId}`);
 
